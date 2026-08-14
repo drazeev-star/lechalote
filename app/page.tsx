@@ -97,12 +97,6 @@ export default function Home() {
   agradable y relajado.
 </p>
 
-<p>
-  Estaremos encantados de recibiros en{" "}
-  <strong>Carretera de la Guardia, 146</strong>, muy cerca de una
-  de las playas más bonitas de la Costa Blanca.
-</p>
-
           <a href="/historia" className="text-link">
   Conoce nuestra historia →
 </a>
