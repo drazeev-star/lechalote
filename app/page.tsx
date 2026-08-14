@@ -61,7 +61,7 @@ export default function Home() {
 
           <div className="hero-buttons">
   <a
-    href="tel:+34865123456"
+    href="tel:+34865451182"
     className="btn btn-primary"
   >
     RESERVAR MESA · +34 865 451 182
