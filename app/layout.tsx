@@ -15,7 +15,20 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "L'Échalote · Café Gastrobar",
   description:
-    "Cocina internacional, ingredientes frescos y una experiencia para compartir en Jávea, Alicante.",
+    "Cocina mediterránea, ingredientes frescos y una experiencia para compartir en Jávea, Alicante.",
+  openGraph: {
+    title: "L'Échalote · Café Gastrobar",
+    description:
+      "Cocina mediterránea, ingredientes frescos y una experiencia para compartir en Jávea, Alicante.",
+    images: [
+      {
+        url: "/images/hero.jpg",
+        width: 1536,
+        height: 1024,
+        alt: "L'Échalote Café Gastrobar",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
