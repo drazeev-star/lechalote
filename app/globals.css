@@ -1,26 +1,1158 @@
-@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap");
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --green: #071d18;
+  --green-dark: #03110e;
+  --cream: #f3efe6;
+  --gold: #b88a3b;
+  --gold-light: #c99b49;
+  --text: #26312f;
+  --white: #ffffff;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  color: var(--text);
+  background: var(--cream);
+  font-family: "DM Sans", Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+/* =========================
+   COMMON
+========================= */
+
+section {
+  position: relative;
+}
+
+.section-kicker {
+  display: block;
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  position: relative;
+  height: 430px;
+  min-height: 430px;
+  overflow: hidden;
+  color: var(--white);
+}
+
+.hero-image {
+  object-fit: cover;
+  object-position: center center;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(3, 17, 14, 0.78) 0%,
+      rgba(3, 17, 14, 0.48) 42%,
+      rgba(3, 17, 14, 0.12) 100%
+    );
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.header-container {
+  width: min(100%, 1440px);
+  height: 100px;
+  margin: 0 auto;
+  padding: 18px 50px;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: flex-start;
+}
+
+.logo img {
+  width: 175px;
+  height: auto;
+  object-fit: contain;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding-top: 18px;
+}
+
+.navigation a {
+  position: relative;
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.navigation a:hover {
+  color: var(--gold);
+}
+
+.navigation .active {
+  color: var(--gold);
+}
+
+.navigation .active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -8px;
+  height: 1px;
+  background: var(--gold);
+}
+
+/* =========================
+   HERO CONTENT
+========================= */
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+
+  width: min(100%, 1440px);
+  margin: 0 auto;
+  padding: 145px 50px 0;
+}
+
+.hero-kicker {
+  display: block;
+  margin-bottom: 12px;
+
+  color: var(--gold);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 0;
+
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(62px, 6vw, 86px);
+  font-weight: 500;
+  line-height: 0.98;
+}
+
+.hero p {
+  margin: 14px 0 0;
+
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 128px;
+  padding: 12px 22px;
+
+  border: 1px solid var(--gold);
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.btn-primary {
+  background: var(--gold);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--gold-light);
+}
+
+.btn-outline {
+  background: transparent;
+  color: white;
+}
+
+.btn-outline:hover {
+  background: var(--gold);
+}
+
+/* =========================
+   WELCOME
+========================= */
+
+.welcome {
+  display: grid;
+  grid-template-columns: 35% 65%;
+
+  min-height: 300px;
+
+  background: var(--cream);
+}
+
+.welcome-text {
+  padding: 25px 50px 35px;
+}
+
+.welcome-text h2 {
+  margin: 25px 0 20px;
+
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.welcome-text p {
+  max-width: 390px;
+  margin: 0 0 8px;
+
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.text-link {
+  display: inline-block;
+  margin-top: 12px;
+
+  color: #9f7229;
+  font-size: 12px;
+
+  border-bottom: 1px solid #9f7229;
+}
+
+.welcome-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.welcome-image {
+  position: relative;
+  min-height: 300px;
+  overflow: hidden;
+}
+
+.welcome-image img {
+  object-fit: cover;
+}
+
+/* =========================
+   TERRACE
+========================= */
+
+.terrace {
+  display: grid;
+  grid-template-columns: 24% 76%;
+  min-height: 225px;
+}
+
+.terrace-text {
+  padding: 28px 45px;
+
+  color: white;
+
+  background:
+    linear-gradient(
+      rgba(3, 17, 14, 0.88),
+      rgba(3, 17, 14, 0.88)
+    ),
+    url("/images/terrace-1.jpg") center / cover no-repeat;
+}
+
+.terrace-text h2 {
+  margin: 25px 0 15px;
+
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.terrace-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.terrace-image {
+  position: relative;
+  min-height: 225px;
+  overflow: hidden;
+}
+
+.terrace-image img {
+  object-fit: cover;
+}
+
+/* =========================
+   CUISINE
+========================= */
+
+.cuisine {
+  display: grid;
+  grid-template-columns: 34% 66%;
+
+  min-height: 220px;
+  padding: 10px 45px;
+
+  background: var(--cream);
+}
+
+.cuisine-text {
+  padding: 25px 15px 20px 0;
+}
+
+.cuisine-text p {
+  margin: 22px 0 0;
+
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.cuisine-gallery {
+  display: grid;
+
+  grid-template-columns: 1.5fr 1fr 1fr;
+
+  gap: 5px;
+
+  min-height: 200px;
+}
+
+.food-image {
+  position: relative;
+  min-height: 200px;
+  overflow: hidden;
+}
+
+.food-image img {
+  object-fit: cover;
+}
+
+.wine-image {
+  min-height: 200px;
+}
+
+/* =========================
+   MENU CATEGORIES
+========================= */
+
+.menu-categories {
+  padding: 8px 40px 12px;
+  border-top: 1px solid #ddd5c7;
+  border-bottom: 1px solid #ddd5c7;
+  background: var(--cream);
+  text-align: center;
+}
+
+.menu-categories > .section-kicker {
+  margin-bottom: 10px;
+}
+
+.categories {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+
+  width: min(950px, 100%);
+  margin: 0 auto 6px;
+}
+
+.categories div {
+  position: relative;
+  min-width: 80px;
+  color: var(--text);
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.categories div::before {
+  content: "";
+  display: block;
+
+  width: 26px;
+  height: 26px;
+
+  margin: 0 auto 6px;
+
+  border: 1.5px solid var(--gold);
+  border-radius: 50%;
+}
+
+.menu-categories > .text-link {
+  margin-top: 2px;
+}
+
+/* =========================
+   RESERVATION
+========================= */
+
+.reservation {
+  min-height: 90px;
+  padding: 18px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  color: white;
+  background: var(--green);
+}
+
+.reservation-icon {
+  color: var(--gold);
+  font-size: 40px;
+}
+
+.reservation-text h2 {
+  margin: 0 0 4px;
+  font-family: "Playfair Display", serif;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.reservation-text p,
+.reservation-contact p {
+  margin: 4px 0;
+  font-size: 12px;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+  display: grid;
+  grid-template-columns: 35% 65%;
+  padding: 16px 50px;
+  background: var(--cream);
+}
+
+.contact-info p {
+  margin: 5px 0;
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+.map {
+  min-height: 120px;
+  padding: 12px 0 12px 20px;
+}
+
+.map-placeholder {
+  height: 120px;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background:
+    linear-gradient(
+      rgba(230, 234, 222, 0.65),
+      rgba(210, 225, 234, 0.65)
+    ),
+    url("/images/terrace-2.jpg") center / cover;
+  color: var(--text);
+}
+
+.map-placeholder span {
+  font-size: 24px;
+}
+
+.map-placeholder strong {
+  margin-top: 5px;
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+}
+
+.map-placeholder small {
+  margin-top: 8px;
+}
+.map-placeholder small {
+  margin-top: 7px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  padding: 12px 20px;
+
+  color: #ddd;
+  background: var(--green-dark);
+
+  text-align: center;
+  font-size: 10px;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) {
+  .header-container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .navigation {
+    gap: 18px;
+  }
+
+  .hero-content {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .welcome-text {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .terrace-text {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .cuisine {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .reservation {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .contact {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+  .hero {
+    height: 620px;
+    min-height: 620px;
+  }
+
+  .hero-image {
+    object-position: center center;
+  }
+
+  .header-container {
+    height: 80px;
+    padding: 18px 20px;
+  }
+
+  .logo img {
+    width: 145px;
+  }
+
+  .navigation {
+    display: none;
+  }
+
+  .hero-content {
+    padding: 210px 25px 40px;
+  }
+
+  .hero-kicker {
+    font-size: 11px;
+  }
+
+  .hero h1 {
+    font-size: 58px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn {
+    min-width: 145px;
+  }
+
+  .welcome,
+  .terrace,
+  .cuisine,
+  .contact {
+    grid-template-columns: 1fr;
+  }
+
+  .welcome-text {
+    padding: 35px 25px;
+  }
+
+  .welcome-text h2 {
+    font-size: 34px;
+  }
+
+  .welcome-images {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .welcome-image {
+    min-height: 220px;
+  }
+
+  .terrace-text {
+    padding: 35px 25px;
+  }
+
+  .terrace-text h2 {
+    font-size: 28px;
+  }
+
+  .terrace-images {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .terrace-image {
+    min-height: 180px;
+  }
+
+  .cuisine {
+    padding: 0;
+  }
+
+  .cuisine-text {
+    padding: 35px 25px;
+  }
+
+  .cuisine-gallery {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 180px 180px;
+    padding: 0 5px 5px;
+  }
+
+  .food-image {
+    min-height: 180px;
+  }
+
+  .food-large {
+    grid-column: span 2;
+  }
+
+  .wine-image {
+    min-height: 180px;
+  }
+
+  .menu-categories {
+    padding: 20px;
+  }
+
+  .categories {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .reservation {
+    padding: 30px 25px;
+    flex-wrap: wrap;
+  }
+
+  .reservation-contact {
+    width: 100%;
+  }
+
+  .contact {
+    padding: 30px 25px;
+  }
+
+  .map-placeholder {
+    margin-top: 20px;
+  }
+}
+/* =========================
+   CARTA PAGE
+========================= */
+
+.carta-page {
+  min-height: 100vh;
+  background: #f3f0e7;
+  color: #24332f;
+}
+
+.carta-header {
+  background: var(--green);
+  color: white;
+}
+
+.carta-header-container {
+  width: min(100%, 1440px);
+  margin: 0 auto;
+  padding: 18px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.carta-logo {
+  color: var(--gold);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 30px;
+  text-decoration: none;
+}
+
+.carta-navigation {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.carta-navigation a {
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+.carta-navigation a:hover,
+.carta-navigation a.active {
+  color: var(--gold);
+}
+
+
+/* HERO */
+
+.carta-hero {
+  padding: 85px 30px 70px;
+  text-align: center;
+  background: #f3f0e7;
+}
+
+.carta-hero h1 {
+  margin: 10px 0 8px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(48px, 6vw, 76px);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.carta-hero p {
+  margin: 0;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+
+/* CATEGORY NAV */
+
+.carta-categories {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px 30px;
+  padding: 22px 30px;
+  border-top: 1px solid rgba(191, 141, 51, 0.35);
+  border-bottom: 1px solid rgba(191, 141, 51, 0.35);
+  background: #f3f0e7;
+}
+
+.carta-categories a {
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+
+/* MENU SECTIONS */
+
+.menu-section {
+  width: min(100%, 1000px);
+  margin: 0 auto;
+  padding: 75px 30px;
+}
+
+.menu-section-dark {
+  width: 100%;
+  max-width: none;
+  padding-left: max(30px, calc((100% - 1000px) / 2));
+  padding-right: max(30px, calc((100% - 1000px) / 2));
+  background: var(--green);
+  color: white;
+}
+
+.menu-section-light {
+  width: 100%;
+  max-width: none;
+  background: #e9e5da;
+}
+
+.menu-section h2 {
+  margin: 8px 0 12px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 38px;
+  font-weight: 500;
+}
+
+.menu-note {
+  margin: 0 0 10px;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+
+.menu-intro {
+  max-width: 700px;
+  margin: 0 0 35px;
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+.menu-group {
+  margin-top: 42px;
+}
+
+.menu-group h3 {
+  margin: 0 0 18px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(191, 141, 51, 0.5);
+  color: var(--gold);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.menu-item {
+  margin-bottom: 22px;
+}
+
+.menu-item-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.menu-item h4 {
+  margin: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.menu-item-top span {
+  flex-shrink: 0;
+  color: var(--gold);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.menu-item p {
+  max-width: 750px;
+  margin: 5px 0 0;
+  font-size: 12px;
+  line-height: 1.55;
+  opacity: 0.72;
+}
+
+
+/* VEGAN / CHILDREN */
+
+.menu-columns {
+  width: min(100%, 1000px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+
+/* =========================
+   HISTORIA PAGE
+========================= */
+
+.historia-page {
+  min-height: 100vh;
+  background: #f3f0e7;
+  color: #24332f;
+}
+
+.historia-main {
+  width: min(100%, 1200px);
+  min-height: calc(100vh - 90px);
+  margin: 0 auto;
+  padding: 70px 50px;
+
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 70px;
+
+  align-items: center;
+}
+
+.historia-text {
+  max-width: 500px;
+}
+
+.historia-text h1 {
+  margin: 8px 0 25px;
+
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(52px, 6vw, 78px);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.historia-text > p {
+  margin: 0 0 18px;
+
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.historia-contact {
+  margin: 35px 0 25px;
+  padding-top: 20px;
+
+  border-top: 1px solid rgba(191, 141, 51, 0.4);
+}
+
+.historia-contact p {
+  margin: 0 0 10px;
+
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 20px;
+}
+
+.historia-contact a {
+  display: block;
+
+  margin-top: 6px;
+
+  color: #24332f;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.historia-contact a:hover {
+  color: var(--gold);
+}
+
+.historia-image {
+  position: relative;
+
+  width: 100%;
+  height: 620px;
+
+  overflow: hidden;
+}
+
+.historia-image img {
+  object-fit: cover;
+  object-position: center;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+  .historia-main {
+    grid-template-columns: 1fr;
+    gap: 40px;
+
+    padding: 55px 25px;
+  }
+
+  .historia-text {
+    max-width: none;
+  }
+
+  .historia-image {
+    height: 420px;
+  }
+
+}
+
+/* RESERVATION */
+
+.carta-reservation {
+  padding: 45px max(30px, calc((100% - 1200px) / 2));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  background: var(--green);
+  color: white;
+}
+
+.carta-reservation h2 {
+  margin: 0 0 5px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.carta-reservation p {
+  margin: 0;
+  font-size: 13px;
+}
+
+.carta-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: right;
+}
+
+.carta-contact a {
+  color: white;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.carta-contact a:hover {
+  color: var(--gold);
+}
+
+
+/* FOOTER */
+
+.carta-footer {
+  padding: 20px;
+  background: #021512;
+  color: white;
+  text-align: center;
+  font-size: 11px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+  .carta-header-container {
+    padding: 15px 20px;
+  }
+
+  .carta-navigation {
+    gap: 12px;
+  }
+
+  .carta-navigation a {
+    font-size: 9px;
+  }
+
+  .carta-hero {
+    padding: 60px 20px 50px;
+  }
+
+  .carta-categories {
+    gap: 15px;
+    padding: 18px;
+  }
+
+  .menu-section {
+    padding: 55px 20px;
+  }
+
+  .menu-section-dark {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .menu-item-top {
+    gap: 15px;
+  }
+
+  .menu-item h4 {
+    font-size: 16px;
+  }
+
+  .menu-item-top span {
+    font-size: 13px;
+  }
+
+  .menu-columns {
+    grid-template-columns: 1fr;
+    gap: 45px;
+    padding: 55px 20px;
+  }
+
+  .carta-reservation {
+    padding: 35px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .carta-contact {
+    text-align: left;
+  }
 }
