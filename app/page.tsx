@@ -91,9 +91,9 @@ export default function Home() {
             recuerdos inolvidables.
           </p>
 
-          <a href="#historia" className="text-link">
-            Conoce nuestra historia →
-          </a>
+          <a href="/historia" className="text-link">
+  Conoce nuestra historia →
+</a>
         </div>
 
         <div className="welcome-images">
