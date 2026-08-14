@@ -67,7 +67,7 @@ export default function HistoriaPage() {
             <p>Te esperamos en L&apos;Échalote</p>
 
             <a href="tel:+34865451182">
-              865 451 182
+              +34 865 451 182
             </a>
 
             <a href="mailto:lechalotegastrobar@gmail.com">
