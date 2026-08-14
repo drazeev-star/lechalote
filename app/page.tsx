@@ -54,7 +54,7 @@ export default function Home() {
           <h1>L&apos;Échalote</h1>
 
           <p>
-            Cocina mediterránea, ingredientes frescos
+            Cocina internacional, ingredientes frescos
             <br />
             y una experiencia para compartir.
           </p>
@@ -82,14 +82,26 @@ export default function Home() {
           </h2>
 
           <p>
-            Donde la cocina mediterránea se encuentra
-            con un ambiente luminoso, relajado y elegante.
-          </p>
+  En Jávea, de camino a la pintoresca playa de Granadella,
+  se encuentra nuestro acogedor restaurante-gastrobar.
+</p>
 
-          <p>
-            Un lugar para disfrutar, compartir y crear
-            recuerdos inolvidables.
-          </p>
+<p>
+  Os esperamos para disfrutar de nuestros desayunos de 9:30 a 12:30,
+  tapas de 12:30 a 15:30 y cenas de 18:30 a 22:30.
+</p>
+
+<p>
+  Ponemos a vuestra disposición un amplio salón con techos altos
+  y una gran terraza soleada, perfecta para disfrutar de un ambiente
+  agradable y relajado.
+</p>
+
+<p>
+  Estaremos encantados de recibiros en{" "}
+  <strong>Carretera de la Guardia, 146</strong>, muy cerca de una
+  de las playas más bonitas de la Costa Blanca.
+</p>
 
           <a href="/historia" className="text-link">
   Conoce nuestra historia →
