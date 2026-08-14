@@ -88,6 +88,7 @@ export default function HistoriaPage() {
             src="/images/interior-1.jpg"
             alt="Interior de L'Échalote"
             fill
+            sizes="(max-width: 768px) 100vw, 50vw"
           />
 
         </div>

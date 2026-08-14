@@ -102,6 +102,7 @@ export default function Home() {
               src="/images/interior-1.jpg"
               alt="Interior de L'Échalote"
               fill
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
           </div>
 
@@ -110,6 +111,7 @@ export default function Home() {
               src="/images/terrace-1.jpg"
               alt="Terraza de L'Échalote"
               fill
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
           </div>
         </div>
@@ -139,18 +141,20 @@ export default function Home() {
   <div className="cuisine-gallery">
 
     <div className="food-image food-large">
-      <Image
-        src="/images/food-1.jpg"
-        alt="Cocina mediterránea"
-        fill
-      />
-    </div>
+  <Image
+    src="/images/food-1.jpg"
+    alt="Cocina mediterránea"
+    fill
+    sizes="(max-width: 768px) 100vw, 60vw"
+  />
+</div>
 
     <div className="food-image">
       <Image
         src="/images/food-2.jpg"
         alt="Plato mediterráneo"
         fill
+        sizes="(max-width: 768px) 100vw, 60vw"
       />
     </div>
 
@@ -159,6 +163,7 @@ export default function Home() {
         src="/images/vine.jpg"
         alt="Vino"
         fill
+        sizes="(max-width: 768px) 100vw, 60vw"
       />
     </div>
 
