@@ -14,13 +14,26 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.lechalotejavea.com"),
+
   title: "L'Échalote · Café Gastrobar",
+
   description:
-    "Cocina mediterránea, ingredientes frescos y una experiencia para compartir en Jávea, Alicante.",
+    "Cocina internacional, ingredientes frescos y una experiencia para compartir en Jávea, Alicante.",
+
   openGraph: {
     title: "L'Échalote · Café Gastrobar",
+
     description:
-      "Cocina mediterránea, ingredientes frescos y una experiencia para compartir en Jávea, Alicante.",
+      "Cocina internacional, ingredientes frescos y una experiencia para compartir en Jávea, Alicante.",
+
+    url: "https://www.lechalotejavea.com",
+
+    siteName: "L'Échalote Café Gastrobar",
+
+    locale: "es_ES",
+
+    type: "website",
+
     images: [
       {
         url: "/images/og-preview-v2.jpg",
