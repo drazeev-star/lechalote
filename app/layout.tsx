@@ -35,13 +35,13 @@ export const metadata: Metadata = {
     type: "website",
 
     images: [
-      {
-        url: "/images/og-preview-v2.jpg",
-        width: 1536,
-        height: 1024,
-        alt: "L'Échalote Café Gastrobar",
-      },
-    ],
+  {
+    url: "/images/og-whatsapp.jpg",
+    width: 1200,
+    height: 630,
+    alt: "L'Échalote Café Gastrobar",
+  },
+],
   },
 };
 
