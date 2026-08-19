@@ -1,4 +1,5 @@
 import Image from "next/image";
+import LanguageSwitcher from "@/app/components/LanguageSwitcher";
 
 export default function HomeEnglish() {
   return (
@@ -17,43 +18,39 @@ export default function HomeEnglish() {
 
         <header className="header">
           <div className="header-container">
-            <a href="/en" className="logo">
-              <Image
-                src="/images/logo.png"
-                alt="L'Échalote Café Gastrobar"
-                width={190}
-                height={80}
-              />
-            </a>
+  <a href="/en" className="logo">
+    <Image
+      src="/images/logo.png"
+      alt="L'Échalote Café Gastrobar"
+      width={190}
+      height={80}
+    />
+  </a>
 
-            <nav className="navigation">
-              <a href="/en#inicio" className="active">
-                HOME
-              </a>
+  <nav className="navigation">
+    <a href="/en#inicio" className="active">
+      HOME
+    </a>
 
-              <a href="/en/historia">OUR STORY</a>
+    <a href="/en/historia">OUR STORY</a>
 
-              <a href="/en/carta">MENU</a>
+    <a href="/en/carta">MENU</a>
 
-              <a href="mailto:lechalotegastrobar@gmail.com">
-                RESERVATIONS
-              </a>
+    <a href="mailto:lechalotegastrobar@gmail.com">
+      RESERVATIONS
+    </a>
 
-              <a
-                href="https://www.google.com/maps/search/?api=1&query=Carretera+de+la+Guardia+146%2C+Jávea%2C+Alicante"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                CONTACT
-              </a>
+    <a
+      href="https://www.google.com/maps/search/?api=1&query=Carretera+de+la+Guardia+146%2C+Jávea%2C+Alicante"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      CONTACT
+    </a>
+  </nav>
 
-              <span className="language-switch">
-                <a href="/">ES</a>
-                <span> · </span>
-                <a href="/en">EN</a>
-              </span>
-            </nav>
-          </div>
+  <LanguageSwitcher current="en" />
+</div>
         </header>
 
         <div className="hero-content" id="inicio">

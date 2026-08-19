@@ -1,4 +1,5 @@
 import Image from "next/image";
+import LanguageSwitcher from "@/app/components/LanguageSwitcher";
 
 export default function Home() {
   return (
@@ -27,22 +28,32 @@ export default function Home() {
             </a>
 
             <nav className="navigation">
-  <a href="#inicio" className="active">
-    INICIO
-  </a>
-  <a href="/historia">HISTORIA</a>
-  <a href="/carta">CARTA</a>
-  <a href="mailto:lechalotegastrobar@gmail.com">
-    RESERVAS
-  </a>
-  <a
-  href="https://www.google.com/maps/search/?api=1&query=Carretera+de+la+Guardia+146%2C+J%C3%A1vea%2C+Alicante"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  CONTACTO
-</a>
-</nav>
+              <a href="#inicio" className="active">
+                INICIO
+              </a>
+
+              <a href="/historia">
+                HISTORIA
+              </a>
+
+              <a href="/carta">
+                CARTA
+              </a>
+
+              <a href="mailto:lechalotegastrobar@gmail.com">
+                RESERVAS
+              </a>
+
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Carretera+de+la+Guardia+146%2C+J%C3%A1vea%2C+Alicante"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                CONTACTO
+              </a>
+
+              <LanguageSwitcher current="es" />
+            </nav>
           </div>
         </header>
 
@@ -60,13 +71,13 @@ export default function Home() {
           </p>
 
           <div className="hero-buttons">
-  <a
-    href="tel:+34865451182"
-    className="btn btn-primary"
-  >
-    RESERVAR MESA · +34 865 451 182
-  </a>
-</div>
+            <a
+              href="tel:+34865451182"
+              className="btn btn-primary"
+            >
+              RESERVAR MESA · +34 865 451 182
+            </a>
+          </div>
         </div>
       </section>
 
@@ -82,24 +93,24 @@ export default function Home() {
           </h2>
 
           <p>
-  En Jávea, de camino a la pintoresca playa de Granadella,
-  se encuentra nuestro acogedor restaurante-gastrobar.
-</p>
+            En Jávea, de camino a la pintoresca playa de Granadella,
+            se encuentra nuestro acogedor restaurante-gastrobar.
+          </p>
 
-<p>
-  Os esperamos para disfrutar de nuestros desayunos de 9:30 a 12:30,
-  tapas de 12:30 a 15:30 y cenas de 18:30 a 22:30.
-</p>
+          <p>
+            Os esperamos para disfrutar de nuestros desayunos de 9:30 a 12:30,
+            tapas de 12:30 a 15:30 y cenas de 18:30 a 22:30.
+          </p>
 
-<p>
-  Ponemos a vuestra disposición un amplio salón con techos altos
-  y una gran terraza soleada, perfecta para disfrutar de un ambiente
-  agradable y relajado.
-</p>
+          <p>
+            Ponemos a vuestra disposición un amplio salón con techos altos
+            y una gran terraza soleada, perfecta para disfrutar de un ambiente
+            agradable y relajado.
+          </p>
 
           <a href="/historia" className="text-link">
-  Conoce nuestra historia →
-</a>
+            Conoce nuestra historia →
+          </a>
         </div>
 
         <div className="welcome-images">
@@ -123,76 +134,66 @@ export default function Home() {
         </div>
       </section>
 
+      {/* COCINA */}
+      <section className="cuisine">
+        <div className="cuisine-text">
+          <span className="section-kicker">NUESTRA COCINA</span>
 
-     {/* COCINA */}
+          <p>
+            Sabores que nacen del Mediterráneo.
+            <br />
+            Ingredientes frescos,
+            <br />
+            platos hechos para disfrutar.
+          </p>
 
-<section className="cuisine">
+          <a href="/carta" className="text-link">
+            Ver toda la carta →
+          </a>
+        </div>
 
-  <div className="cuisine-text">
-    <span className="section-kicker">NUESTRA COCINA</span>
+        <div className="cuisine-gallery">
+          <div className="food-image food-large">
+            <Image
+              src="/images/food-1.jpg"
+              alt="Cocina mediterránea"
+              fill
+              sizes="(max-width: 768px) 100vw, 60vw"
+            />
+          </div>
 
-    <p>
-      Sabores que nacen del Mediterráneo.
-      <br />
-      Ingredientes frescos,
-      <br />
-      platos hechos para disfrutar.
-    </p>
+          <div className="food-image">
+            <Image
+              src="/images/food-2.jpg"
+              alt="Plato mediterráneo"
+              fill
+              sizes="(max-width: 768px) 100vw, 60vw"
+            />
+          </div>
 
-    <a href="/carta" className="text-link">
-  Ver toda la carta →
-</a>
-  </div>
-
-  <div className="cuisine-gallery">
-
-    <div className="food-image food-large">
-  <Image
-    src="/images/food-1.jpg"
-    alt="Cocina mediterránea"
-    fill
-    sizes="(max-width: 768px) 100vw, 60vw"
-  />
-</div>
-
-    <div className="food-image">
-      <Image
-        src="/images/food-2.jpg"
-        alt="Plato mediterráneo"
-        fill
-        sizes="(max-width: 768px) 100vw, 60vw"
-      />
-    </div>
-
-    <div className="food-image wine-image">
-      <Image
-        src="/images/vine.jpg"
-        alt="Vino"
-        fill
-        sizes="(max-width: 768px) 100vw, 60vw"
-      />
-    </div>
-
-  </div>
-
-</section>
+          <div className="food-image wine-image">
+            <Image
+              src="/images/vine.jpg"
+              alt="Vino"
+              fill
+              sizes="(max-width: 768px) 100vw, 60vw"
+            />
+          </div>
+        </div>
+      </section>
 
       {/* RESERVA */}
-      {/* RESERVA */}
+      <section className="reservation">
+        <div className="reservation-text">
+          <h2>Reserva tu mesa</h2>
+          <p>Estamos listos para recibirte.</p>
+        </div>
 
-<section className="reservation">
-
-  <div className="reservation-text">
-    <h2>Reserva tu mesa</h2>
-    <p>Estamos listos para recibirte.</p>
-  </div>
-
-  <div className="reservation-contact">
-    <p>+34 865 123 456</p>
-    <p>lechalotegastrobar@gmail.com</p>
-  </div>
-
-</section>
+        <div className="reservation-contact">
+          <p>+34 865 123 456</p>
+          <p>lechalotegastrobar@gmail.com</p>
+        </div>
+      </section>
 
       {/* CONTACTO */}
       <section className="contact" id="contacto">
@@ -207,14 +208,14 @@ export default function Home() {
         </div>
 
         <a
-  href="https://www.google.com/maps/search/?api=1&query=Carretera+de+la+Guardia+146%2C+Jávea%2C+Alicante"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="map-placeholder"
->
-  <span>📍 L&apos;Échalote</span>
-  <small>Jávea</small>
-</a>
+          href="https://www.google.com/maps/search/?api=1&query=Carretera+de+la+Guardia+146%2C+Jávea%2C+Alicante"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="map-placeholder"
+        >
+          <span>📍 L&apos;Échalote</span>
+          <small>Jávea</small>
+        </a>
       </section>
 
       {/* FOOTER */}
