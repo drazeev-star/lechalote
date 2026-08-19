@@ -52,8 +52,9 @@ export default function Home() {
                 CONTACTO
               </a>
 
-              <LanguageSwitcher current="es" />
             </nav>
+            
+            <LanguageSwitcher current="es" />
           </div>
         </header>
 
