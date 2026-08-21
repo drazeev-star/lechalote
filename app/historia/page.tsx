@@ -29,7 +29,7 @@ export default function HistoriaPage() {
             </a>
 
             <a
-              href="https://www.google.com/maps/search/?api=1&query=Carretera+de+la+Guardia+146%2C+Jávea%2C+Alicante"
+              href="https://maps.app.goo.gl/9EzZZW3GN9BAgceq8"
               target="_blank"
               rel="noopener noreferrer"
             >
